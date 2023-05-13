@@ -1,0 +1,17 @@
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\bin\Debug\BDO Proje Bahar.exe.config
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\bin\Debug\BDO Proje Bahar.exe
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\bin\Debug\BDO Proje Bahar.pdb
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\obj\Debug\BDO Proje Bahar.csproj.AssemblyReference.cache
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\obj\Debug\BDO Proje Bahar.csproj.SuggestedBindingRedirects.cache
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\obj\Debug\BDO_Proje_Bahar.Form1.resources
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\obj\Debug\BDO_Proje_Bahar.Properties.Resources.resources
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\obj\Debug\BDO Proje Bahar.csproj.GenerateResource.cache
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\obj\Debug\BDO Proje Bahar.csproj.CoreCompileInputs.cache
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\obj\Debug\BDO Proje Bahar.exe
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\obj\Debug\BDO Proje Bahar.pdb
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\obj\Debug\BDO Proje Bahar.csproj.CopyComplete
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\bin\Debug\CircularProgressBar.dll
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\bin\Debug\WinFormAnimation.dll
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\bin\Debug\CircularProgressBar.xml
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\bin\Debug\M2Mqtt.Net.dll
+C:\Users\Ahmet1337\Desktop\Ders\4. Semester\Formal Languages and Automata\Proje\Codes\BDO_Proje_Bahar\BDO Proje Bahar\BDO Proje Bahar\bin\Debug\M2Mqtt.Net.pdb
