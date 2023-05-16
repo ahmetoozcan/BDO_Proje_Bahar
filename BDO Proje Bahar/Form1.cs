@@ -1,35 +1,206 @@
-﻿using System.Windows.Forms;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows.Forms;
+using uPLibrary.Networking.M2Mqtt;
+using uPLibrary.Networking.M2Mqtt.Messages;
 
 namespace BDO_Proje_Bahar {
     public partial class Form1 : Form {
+        readonly ChargeStationSimulator chargeStation1;
+        readonly ChargeStationSimulator chargeStation2;
+        readonly ElectricVehicleSimulator tesla;
+        readonly ElectricVehicleSimulator mercedes;
+        readonly ElectricVehicleSimulator toyota;
+
+        MqttClient mqttClient;
+
+        void OnMessageReceived(object sender, MqttMsgPublishEventArgs e) {
+            string message = Encoding.Default.GetString(e.Message);
+            string topic = e.Topic;
+
+            Dictionary<string, dynamic> data = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(message);
+
+            if (topic == "chargestation/hub") {
+                if (data["payload"]["connectorId"] == "1") {
+                    UpdateLabel(ŞarjİstasyonuALabel, StationLabelFormatter(data));
+                }
+                else if (data["payload"]["connectorId"] == "2") {
+                    UpdateLabel(ŞarjİstasyonuBLabel, StationLabelFormatter(data));
+                }
+            }
+            else if (topic == "deneme/deneme") {
+                if (data["brand"] == "Toyota") {
+                    UpdateLabel(ToyotaCarStatusLabel, VehicleLabelFormatter(data));
+                    UpdateProgressBar(ToyotaProgressBar, data["chargePercentage"].ToString());
+                    UpdateProgressBar(ToyotaProgressBar, data["chargePercentage"]);
+                }
+                else if (data["brand"] == "Mercedes") {
+                    UpdateLabel(MercedesCarStatusLabel, VehicleLabelFormatter(data));
+                    UpdateProgressBar(MercedesProgressBar, data["chargePercentage"].ToString());
+                    UpdateProgressBar(MercedesProgressBar, data["chargePercentage"]);
+                }
+                else if (data["brand"] == "Tesla") {
+                    UpdateLabel(TeslaCarStatusLabel, VehicleLabelFormatter(data));
+                    UpdateProgressBar(TeslaProgressBar, data["chargePercentage"].ToString());
+                    UpdateProgressBar(TeslaProgressBar, data["chargePercentage"]);
+                }
+            }
+        }
+
+        private void UpdateLabel(Label label, string text) {
+            if (label.InvokeRequired) {
+                label.Invoke(new Action<Label, string>(UpdateLabel), label, text);
+            }
+            else {
+                label.Text = text;
+            }
+        }
+
+        private void UpdateProgressBar(ProgressBar progressBar, Int64 value) {
+            if (progressBar.InvokeRequired) {
+                progressBar.Invoke(new Action<ProgressBar, Int64>(UpdateProgressBar), progressBar, (int)value);
+            }
+            else {
+                progressBar.Value = (int)value;
+            }
+        }
+
+        private void UpdateProgressBar(ProgressBar progressBar, string value) {
+            if (progressBar.InvokeRequired) {
+                progressBar.Invoke(new Action<ProgressBar, string>(UpdateProgressBar), progressBar, value);
+            }
+            else {
+                progressBar.Text = value;
+            }
+        }
+
+        static private string StationLabelFormatter(Dictionary<string, dynamic> dict) {
+            return "{" + $"\n  \"action\": \"{dict["action"]}\","
+                + "\n  \"payload\": {" + $"\n    \"connectorId\": {dict["payload"]["connectorId"]},"
+                + $"\n    \"status\": \"{dict["payload"]["status"]}\","
+                + $"\n    \"current\": {dict["payload"]["current"]},"
+                + $"\n    \"voltage\": {dict["payload"]["voltage"]},"
+                + $"\n    \"energy\": {dict["payload"]["energy"]},"
+                + $"\n    \"errorCode\": {dict["payload"]["errorCode"]},"
+                + $"\n    \"timestamp\": \"{dict["payload"]["timestamp"]}\","
+                + $"\n    \"modelId\": \"{dict["payload"]["modelId"]}\"" + "\n  },"
+                + $"\n  \"id\": \"{dict["id"]}\"" + "\n}";
+        }
+
+        static private string VehicleLabelFormatter(Dictionary<string, dynamic> dict) {
+            return "Durum: " + dict["status"] + "\n" + "Bağlanılan Cihaz: " + dict["connectorId"];
+        }
+
         public Form1() {
             InitializeComponent();
-        }
-        ElectricVehicleSimulator ev = new ElectricVehicleSimulator();
-        private void Form1_Load(object sender, System.EventArgs e) {
             TeslaPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             MercedesPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             ToyotaPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
+
+            mqttClient = new MqttClient("broker.hivemq.com", 1883, false, null, null, MqttSslProtocols.None);
+
+            string clientID = Guid.NewGuid().ToString();
+
+            mqttClient.Connect(clientID);
+
+            string[] topics = { "chargestation/hub", "deneme/deneme" };
+            byte[] qosLevels = { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE };
+            mqttClient.Subscribe(topics, qosLevels);
+
+
+
+            mqttClient.MqttMsgPublishReceived += OnMessageReceived;
+
+            chargeStation1 = new ChargeStationSimulator("1");
+            chargeStation2 = new ChargeStationSimulator("2");
+            tesla = new ElectricVehicleSimulator("Tesla", "Model 3");
+            mercedes = new ElectricVehicleSimulator("Mercedes", "Smart Fortwo");
+            toyota = new ElectricVehicleSimulator("Toyota", "BZ4X");
+
         }
 
-        private void button1_Click(object sender, System.EventArgs e) {
-            ev.Start();
-        }
-
-        private void button2_Click(object sender, System.EventArgs e) {
-            ev.StartCharging();
-        }
-
-        private void button3_Click(object sender, System.EventArgs e) {
-            ev.StopCharge();
-        }
-
-        private void button10_Click(object sender, System.EventArgs e) {
-            ev.Stop();
-        }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e) {
-            ev.KillThreads();
+            chargeStation1.Dispose();
+            chargeStation2.Dispose();
+            tesla.Dispose();
+            mercedes.Dispose();
+            toyota.Dispose();
+            mqttClient.Disconnect();
+        }
+
+        private void TeslaStartButton_Click(object sender, EventArgs e) {
+            tesla.TurnOn();
+        }
+
+        private void TeslaConnectChargeButton_Click(object sender, EventArgs e) {
+            if (TeslaChargeStationARadio.Checked && tesla.IsTurnedOn) {
+                tesla.Connect(chargeStation1);
+            }
+            else if (TeslaChargeStationBRadio.Checked && tesla.IsTurnedOn) {
+                tesla.Connect(chargeStation2);
+            }
+            else {
+                MessageBox.Show("\tLütfen bir şarj aleti seçin ya da simülasyonu başlatın!\t");
+            }
+        }
+
+        private void TeslaDisconnectChargeButton_Click(object sender, EventArgs e) {
+            tesla.Disconnect();
+        }
+
+        private void TeslaStopButton_Click(object sender, EventArgs e) {
+            tesla.TurnOff();
+        }
+
+        private void MercedesStartButton_Click(object sender, EventArgs e) {
+            mercedes.TurnOn();
+        }
+
+        private void MercedesConnectChargeButton_Click(object sender, EventArgs e) {
+            if (MercedesChargeStationARadio.Checked && mercedes.IsTurnedOn) {
+                mercedes.Connect(chargeStation1);
+            }
+            else if (MercedesChargeStationBRadio.Checked && mercedes.IsTurnedOn) {
+                mercedes.Connect(chargeStation2);
+            }
+            else {
+                MessageBox.Show("\tLütfen bir şarj aleti seçin ya da simülasyonu başlatın!\t");
+            }
+        }
+
+        private void MercedesDisconnectChargeButton_Click(object sender, EventArgs e) {
+            mercedes.Disconnect();
+        }
+
+        private void MercedesStopButton_Click(object sender, EventArgs e) {
+            mercedes.TurnOff();
+        }
+
+        private void ToyotaStartButton_Click(object sender, EventArgs e) {
+            toyota.TurnOn();
+        }
+
+        private void ToyotaConnectChargeButton_Click(object sender, EventArgs e) {
+            if (ToyotaChargeStationARadio.Checked && toyota.IsTurnedOn) {
+                toyota.Connect(chargeStation1);
+            }
+            else if (ToyotaChargeStationBRadio.Checked && toyota.IsTurnedOn) {
+                toyota.Connect(chargeStation2);
+            }
+            else {
+                MessageBox.Show("\tLütfen bir şarj aleti seçin ya da simülasyonu başlatın!\t");
+            }
+        }
+
+        private void ToyotaDisconnectChargeButton_Click(object sender, EventArgs e) {
+            toyota.Disconnect();
+        }
+
+        private void ToyotaStopButton_Click(object sender, EventArgs e) {
+            toyota.TurnOff();
         }
     }
 }
