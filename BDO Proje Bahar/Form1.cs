@@ -8,6 +8,8 @@ using uPLibrary.Networking.M2Mqtt.Messages;
 
 namespace BDO_Proje_Bahar {
     public partial class Form1 : Form {
+        Dictionary<string, ElectricVehicleSimulator> Cars;
+
         readonly ChargeStationSimulator chargeStation1;
         readonly ChargeStationSimulator chargeStation2;
         readonly ElectricVehicleSimulator tesla;
@@ -25,18 +27,39 @@ namespace BDO_Proje_Bahar {
             if (topic == "chargestation/hub") {
                 if (data["payload"]["connectorId"] == "1") {
                     UpdateLabel(ŞarjİstasyonuALabel, StationLabelFormatter(data));
+                    if (data["payload"]["status"] == "Available") {
+                        UpdateRadioButton(TeslaChargeStationARadio, true);
+                        UpdateRadioButton(MercedesChargeStationARadio, true);
+                        UpdateRadioButton(ToyotaChargeStationARadio, true);
+                    }
+                    else {
+                        UpdateRadioButton(TeslaChargeStationARadio, false);
+                        UpdateRadioButton(MercedesChargeStationARadio, false);
+                        UpdateRadioButton(ToyotaChargeStationARadio, false);
+                    }
+
                 }
                 else if (data["payload"]["connectorId"] == "2") {
                     UpdateLabel(ŞarjİstasyonuBLabel, StationLabelFormatter(data));
+                    if (data["payload"]["status"] == "Available") {
+                        UpdateRadioButton(TeslaChargeStationBRadio, true);
+                        UpdateRadioButton(MercedesChargeStationBRadio, true);
+                        UpdateRadioButton(ToyotaChargeStationBRadio, true);
+                    }
+                    else {
+                        UpdateRadioButton(TeslaChargeStationBRadio, false);
+                        UpdateRadioButton(MercedesChargeStationBRadio, false);
+                        UpdateRadioButton(ToyotaChargeStationBRadio, false);
+                    }
                 }
             }
-            else if (topic == "deneme/deneme") {
+            else if (topic == "vehicle/status/data") {
                 if (data["brand"] == "Toyota") {
                     UpdateLabel(ToyotaCarStatusLabel, VehicleLabelFormatter(data));
                     UpdateProgressBar(ToyotaProgressBar, data["chargePercentage"].ToString());
                     UpdateProgressBar(ToyotaProgressBar, data["chargePercentage"]);
                 }
-                else if (data["brand"] == "Mercedes") {
+                else if (data["brand"] == "Smart EQ") {
                     UpdateLabel(MercedesCarStatusLabel, VehicleLabelFormatter(data));
                     UpdateProgressBar(MercedesProgressBar, data["chargePercentage"].ToString());
                     UpdateProgressBar(MercedesProgressBar, data["chargePercentage"]);
@@ -49,6 +72,8 @@ namespace BDO_Proje_Bahar {
             }
         }
 
+
+
         private void UpdateLabel(Label label, string text) {
             if (label.InvokeRequired) {
                 label.Invoke(new Action<Label, string>(UpdateLabel), label, text);
@@ -56,6 +81,17 @@ namespace BDO_Proje_Bahar {
             else {
                 label.Text = text;
             }
+        }
+
+        private void UpdateRadioButton(RadioButton radioButton, bool isOccupied) {
+
+            if (radioButton.InvokeRequired) {
+                radioButton.Invoke(new Action<RadioButton, bool>(UpdateRadioButton), radioButton, isOccupied);
+            }
+            else {
+                radioButton.Enabled = isOccupied;
+            }
+
         }
 
         private void UpdateProgressBar(ProgressBar progressBar, Int64 value) {
@@ -90,7 +126,14 @@ namespace BDO_Proje_Bahar {
         }
 
         static private string VehicleLabelFormatter(Dictionary<string, dynamic> dict) {
-            return "Durum: " + dict["status"] + "\n" + "Bağlanılan Cihaz: " + dict["connectorId"];
+            string batteryTemp = dict["batterytemp"] == null ? "" : dict["batterytemp"].ToString("F0") + "°C";
+            string distance = dict["distance"] == null ? "" : dict["distance"].ToString("F0") + " Km";
+            string fullChargeTime = dict["fullchargetime"] == null ? "" : dict["fullchargetime"].ToString("F0") + " Saniye";
+            return "Durum: " + dict["status"] + "\n" + "Bağlanılan Cihaz: " + dict["connectorId"]
+                + "\n" + "Kalan Süre: " + fullChargeTime
+                + "\n" + "Batarya Sıcaklığı: " + batteryTemp
+                + "\n" + "Tahmini Mesafe: " + distance;
+
         }
 
         public Form1() {
@@ -99,13 +142,17 @@ namespace BDO_Proje_Bahar {
             MercedesPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             ToyotaPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
 
+            Cars = new Dictionary<string, ElectricVehicleSimulator>();
+
+
+
             mqttClient = new MqttClient("broker.hivemq.com", 1883, false, null, null, MqttSslProtocols.None);
 
             string clientID = Guid.NewGuid().ToString();
 
             mqttClient.Connect(clientID);
 
-            string[] topics = { "chargestation/hub", "deneme/deneme" };
+            string[] topics = { "chargestation/hub", "vehicle/status/data" };
             byte[] qosLevels = { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE };
             mqttClient.Subscribe(topics, qosLevels);
 
@@ -115,9 +162,9 @@ namespace BDO_Proje_Bahar {
 
             chargeStation1 = new ChargeStationSimulator("1");
             chargeStation2 = new ChargeStationSimulator("2");
-            tesla = new ElectricVehicleSimulator("Tesla", "Model 3");
-            mercedes = new ElectricVehicleSimulator("Mercedes", "Smart Fortwo");
-            toyota = new ElectricVehicleSimulator("Toyota", "BZ4X");
+            tesla = new ElectricVehicleSimulator("Tesla", "Model 3", 5.75, 405, "asd");
+            mercedes = new ElectricVehicleSimulator("Smart EQ", "Fortwo", 1.67, 100, "asd");
+            toyota = new ElectricVehicleSimulator("Toyota", "BZ4X", 6.4, 340, "asd");
 
         }
 

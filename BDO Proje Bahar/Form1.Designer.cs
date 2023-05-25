@@ -24,28 +24,11 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.Tabs = new System.Windows.Forms.TabControl();
-            this.TeslaTab = new System.Windows.Forms.TabPage();
-            this.TeslaChargeStationAGroupBox = new System.Windows.Forms.GroupBox();
-            this.TeslaChargeStationBRadio = new System.Windows.Forms.RadioButton();
-            this.TeslaChargeStationARadio = new System.Windows.Forms.RadioButton();
-            this.TeslaCarStatusLabel = new System.Windows.Forms.Label();
-            this.TeslaConnectChargeButton = new System.Windows.Forms.Button();
-            this.TeslaDisconnectChargeButton = new System.Windows.Forms.Button();
-            this.TeslaStopButton = new System.Windows.Forms.Button();
-            this.TeslaStartButton = new System.Windows.Forms.Button();
-            this.TeslaProgressBar = new CircularProgressBar.CircularProgressBar();
-            this.TeslaPictureBox = new System.Windows.Forms.PictureBox();
-            this.MercedesTab = new System.Windows.Forms.TabPage();
-            this.MercedesChargeStationAGroupBox = new System.Windows.Forms.GroupBox();
-            this.MercedesChargeStationBRadio = new System.Windows.Forms.RadioButton();
-            this.MercedesChargeStationARadio = new System.Windows.Forms.RadioButton();
-            this.MercedesCarStatusLabel = new System.Windows.Forms.Label();
-            this.MercedesConnectChargeButton = new System.Windows.Forms.Button();
-            this.MercedesDisconnectChargeButton = new System.Windows.Forms.Button();
-            this.MercedesStopButton = new System.Windows.Forms.Button();
-            this.MercedesStartButton = new System.Windows.Forms.Button();
-            this.MercedesPictureBox = new System.Windows.Forms.PictureBox();
+            this.MerkezTab = new System.Windows.Forms.TabPage();
+            this.ŞarjGroupBoxB = new System.Windows.Forms.GroupBox();
+            this.ŞarjİstasyonuBLabel = new System.Windows.Forms.Label();
+            this.ŞarjGroupBoxA = new System.Windows.Forms.GroupBox();
+            this.ŞarjİstasyonuALabel = new System.Windows.Forms.Label();
             this.ToyotaTab = new System.Windows.Forms.TabPage();
             this.ToyotaChargeStationGroupBox = new System.Windows.Forms.GroupBox();
             this.ToyotaChargeStationBRadio = new System.Windows.Forms.RadioButton();
@@ -57,207 +40,302 @@
             this.ToyotaStartButton = new System.Windows.Forms.Button();
             this.ToyotaProgressBar = new CircularProgressBar.CircularProgressBar();
             this.ToyotaPictureBox = new System.Windows.Forms.PictureBox();
-            this.MerkezTab = new System.Windows.Forms.TabPage();
-            this.ŞarjGroupBoxB = new System.Windows.Forms.GroupBox();
-            this.ŞarjİstasyonuBLabel = new System.Windows.Forms.Label();
-            this.ŞarjGroupBoxA = new System.Windows.Forms.GroupBox();
-            this.ŞarjİstasyonuALabel = new System.Windows.Forms.Label();
+            this.SmartEQTab = new System.Windows.Forms.TabPage();
             this.MercedesProgressBar = new CircularProgressBar.CircularProgressBar();
-            this.Tabs.SuspendLayout();
-            this.TeslaTab.SuspendLayout();
-            this.TeslaChargeStationAGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TeslaPictureBox)).BeginInit();
-            this.MercedesTab.SuspendLayout();
-            this.MercedesChargeStationAGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MercedesPictureBox)).BeginInit();
-            this.ToyotaTab.SuspendLayout();
-            this.ToyotaChargeStationGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ToyotaPictureBox)).BeginInit();
+            this.MercedesChargeStationAGroupBox = new System.Windows.Forms.GroupBox();
+            this.MercedesChargeStationBRadio = new System.Windows.Forms.RadioButton();
+            this.MercedesChargeStationARadio = new System.Windows.Forms.RadioButton();
+            this.MercedesCarStatusLabel = new System.Windows.Forms.Label();
+            this.MercedesConnectChargeButton = new System.Windows.Forms.Button();
+            this.MercedesDisconnectChargeButton = new System.Windows.Forms.Button();
+            this.MercedesStopButton = new System.Windows.Forms.Button();
+            this.MercedesStartButton = new System.Windows.Forms.Button();
+            this.MercedesPictureBox = new System.Windows.Forms.PictureBox();
+            this.TeslaTab = new System.Windows.Forms.TabPage();
+            this.TeslaChargeStationAGroupBox = new System.Windows.Forms.GroupBox();
+            this.TeslaChargeStationBRadio = new System.Windows.Forms.RadioButton();
+            this.TeslaChargeStationARadio = new System.Windows.Forms.RadioButton();
+            this.TeslaCarStatusLabel = new System.Windows.Forms.Label();
+            this.TeslaConnectChargeButton = new System.Windows.Forms.Button();
+            this.TeslaDisconnectChargeButton = new System.Windows.Forms.Button();
+            this.TeslaStopButton = new System.Windows.Forms.Button();
+            this.TeslaStartButton = new System.Windows.Forms.Button();
+            this.TeslaProgressBar = new CircularProgressBar.CircularProgressBar();
+            this.TeslaPictureBox = new System.Windows.Forms.PictureBox();
+            this.Tabs = new System.Windows.Forms.TabControl();
             this.MerkezTab.SuspendLayout();
             this.ŞarjGroupBoxB.SuspendLayout();
             this.ŞarjGroupBoxA.SuspendLayout();
+            this.ToyotaTab.SuspendLayout();
+            this.ToyotaChargeStationGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ToyotaPictureBox)).BeginInit();
+            this.SmartEQTab.SuspendLayout();
+            this.MercedesChargeStationAGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MercedesPictureBox)).BeginInit();
+            this.TeslaTab.SuspendLayout();
+            this.TeslaChargeStationAGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TeslaPictureBox)).BeginInit();
+            this.Tabs.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Tabs
+            // MerkezTab
             // 
-            this.Tabs.Controls.Add(this.TeslaTab);
-            this.Tabs.Controls.Add(this.MercedesTab);
-            this.Tabs.Controls.Add(this.ToyotaTab);
-            this.Tabs.Controls.Add(this.MerkezTab);
-            this.Tabs.Location = new System.Drawing.Point(-4, 0);
-            this.Tabs.Name = "Tabs";
-            this.Tabs.SelectedIndex = 0;
-            this.Tabs.Size = new System.Drawing.Size(988, 534);
-            this.Tabs.TabIndex = 0;
+            this.MerkezTab.Controls.Add(this.ŞarjGroupBoxB);
+            this.MerkezTab.Controls.Add(this.ŞarjGroupBoxA);
+            this.MerkezTab.Location = new System.Drawing.Point(4, 22);
+            this.MerkezTab.Name = "MerkezTab";
+            this.MerkezTab.Size = new System.Drawing.Size(980, 508);
+            this.MerkezTab.TabIndex = 3;
+            this.MerkezTab.Text = "Merkez";
+            this.MerkezTab.UseVisualStyleBackColor = true;
             // 
-            // TeslaTab
+            // ŞarjGroupBoxB
             // 
-            this.TeslaTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.TeslaTab.Controls.Add(this.TeslaChargeStationAGroupBox);
-            this.TeslaTab.Controls.Add(this.TeslaCarStatusLabel);
-            this.TeslaTab.Controls.Add(this.TeslaConnectChargeButton);
-            this.TeslaTab.Controls.Add(this.TeslaDisconnectChargeButton);
-            this.TeslaTab.Controls.Add(this.TeslaStopButton);
-            this.TeslaTab.Controls.Add(this.TeslaStartButton);
-            this.TeslaTab.Controls.Add(this.TeslaProgressBar);
-            this.TeslaTab.Controls.Add(this.TeslaPictureBox);
-            this.TeslaTab.Location = new System.Drawing.Point(4, 22);
-            this.TeslaTab.Name = "TeslaTab";
-            this.TeslaTab.Padding = new System.Windows.Forms.Padding(3);
-            this.TeslaTab.Size = new System.Drawing.Size(980, 508);
-            this.TeslaTab.TabIndex = 0;
-            this.TeslaTab.Text = "Tesla Model 3";
+            this.ŞarjGroupBoxB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ŞarjGroupBoxB.Controls.Add(this.ŞarjİstasyonuBLabel);
+            this.ŞarjGroupBoxB.Location = new System.Drawing.Point(485, 3);
+            this.ŞarjGroupBoxB.Name = "ŞarjGroupBoxB";
+            this.ŞarjGroupBoxB.Size = new System.Drawing.Size(489, 505);
+            this.ŞarjGroupBoxB.TabIndex = 2;
+            this.ŞarjGroupBoxB.TabStop = false;
+            this.ŞarjGroupBoxB.Text = "Şarj İstasyonu B";
+            this.ŞarjGroupBoxB.UseCompatibleTextRendering = true;
             // 
-            // TeslaChargeStationAGroupBox
+            // ŞarjİstasyonuBLabel
             // 
-            this.TeslaChargeStationAGroupBox.Controls.Add(this.TeslaChargeStationBRadio);
-            this.TeslaChargeStationAGroupBox.Controls.Add(this.TeslaChargeStationARadio);
-            this.TeslaChargeStationAGroupBox.Location = new System.Drawing.Point(182, 377);
-            this.TeslaChargeStationAGroupBox.Name = "TeslaChargeStationAGroupBox";
-            this.TeslaChargeStationAGroupBox.Size = new System.Drawing.Size(111, 73);
-            this.TeslaChargeStationAGroupBox.TabIndex = 16;
-            this.TeslaChargeStationAGroupBox.TabStop = false;
-            this.TeslaChargeStationAGroupBox.Text = "Şarj İstasyonları";
+            this.ŞarjİstasyonuBLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ŞarjİstasyonuBLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ŞarjİstasyonuBLabel.Location = new System.Drawing.Point(37, 58);
+            this.ŞarjİstasyonuBLabel.Name = "ŞarjİstasyonuBLabel";
+            this.ŞarjİstasyonuBLabel.Size = new System.Drawing.Size(413, 389);
+            this.ŞarjİstasyonuBLabel.TabIndex = 1;
+            this.ŞarjİstasyonuBLabel.Text = "label1";
             // 
-            // TeslaChargeStationBRadio
+            // ŞarjGroupBoxA
             // 
-            this.TeslaChargeStationBRadio.AutoSize = true;
-            this.TeslaChargeStationBRadio.Location = new System.Drawing.Point(6, 42);
-            this.TeslaChargeStationBRadio.Name = "TeslaChargeStationBRadio";
-            this.TeslaChargeStationBRadio.Size = new System.Drawing.Size(101, 17);
-            this.TeslaChargeStationBRadio.TabIndex = 1;
-            this.TeslaChargeStationBRadio.TabStop = true;
-            this.TeslaChargeStationBRadio.Text = "Şarj İstasyonu B";
-            this.TeslaChargeStationBRadio.UseVisualStyleBackColor = true;
+            this.ŞarjGroupBoxA.Controls.Add(this.ŞarjİstasyonuALabel);
+            this.ŞarjGroupBoxA.Location = new System.Drawing.Point(3, 3);
+            this.ŞarjGroupBoxA.Name = "ŞarjGroupBoxA";
+            this.ŞarjGroupBoxA.Size = new System.Drawing.Size(485, 505);
+            this.ŞarjGroupBoxA.TabIndex = 1;
+            this.ŞarjGroupBoxA.TabStop = false;
+            this.ŞarjGroupBoxA.Text = "Şarj İstasyonu A";
+            this.ŞarjGroupBoxA.UseCompatibleTextRendering = true;
             // 
-            // TeslaChargeStationARadio
+            // ŞarjİstasyonuALabel
             // 
-            this.TeslaChargeStationARadio.AutoSize = true;
-            this.TeslaChargeStationARadio.Location = new System.Drawing.Point(6, 19);
-            this.TeslaChargeStationARadio.Name = "TeslaChargeStationARadio";
-            this.TeslaChargeStationARadio.Size = new System.Drawing.Size(101, 17);
-            this.TeslaChargeStationARadio.TabIndex = 0;
-            this.TeslaChargeStationARadio.TabStop = true;
-            this.TeslaChargeStationARadio.Text = "Şarj İstasyonu A";
-            this.TeslaChargeStationARadio.UseVisualStyleBackColor = true;
+            this.ŞarjİstasyonuALabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ŞarjİstasyonuALabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ŞarjİstasyonuALabel.Location = new System.Drawing.Point(35, 58);
+            this.ŞarjİstasyonuALabel.Name = "ŞarjİstasyonuALabel";
+            this.ŞarjİstasyonuALabel.Size = new System.Drawing.Size(413, 389);
+            this.ŞarjİstasyonuALabel.TabIndex = 0;
+            this.ŞarjİstasyonuALabel.Text = "label1";
             // 
-            // TeslaCarStatusLabel
+            // ToyotaTab
             // 
-            this.TeslaCarStatusLabel.AutoSize = true;
-            this.TeslaCarStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TeslaCarStatusLabel.Location = new System.Drawing.Point(368, 396);
-            this.TeslaCarStatusLabel.Name = "TeslaCarStatusLabel";
-            this.TeslaCarStatusLabel.Size = new System.Drawing.Size(143, 31);
-            this.TeslaCarStatusLabel.TabIndex = 15;
-            this.TeslaCarStatusLabel.Text = "Car Status";
+            this.ToyotaTab.Controls.Add(this.ToyotaChargeStationGroupBox);
+            this.ToyotaTab.Controls.Add(this.ToyotaCarStatusLabel);
+            this.ToyotaTab.Controls.Add(this.ToyotaConnectChargeButton);
+            this.ToyotaTab.Controls.Add(this.ToyotaDisconnectChargeButton);
+            this.ToyotaTab.Controls.Add(this.ToyotaStopButton);
+            this.ToyotaTab.Controls.Add(this.ToyotaStartButton);
+            this.ToyotaTab.Controls.Add(this.ToyotaProgressBar);
+            this.ToyotaTab.Controls.Add(this.ToyotaPictureBox);
+            this.ToyotaTab.Location = new System.Drawing.Point(4, 22);
+            this.ToyotaTab.Name = "ToyotaTab";
+            this.ToyotaTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ToyotaTab.Size = new System.Drawing.Size(980, 508);
+            this.ToyotaTab.TabIndex = 2;
+            this.ToyotaTab.Text = "Toyota BZ4X";
+            this.ToyotaTab.UseVisualStyleBackColor = true;
             // 
-            // TeslaConnectChargeButton
+            // ToyotaChargeStationGroupBox
             // 
-            this.TeslaConnectChargeButton.Location = new System.Drawing.Point(282, 215);
-            this.TeslaConnectChargeButton.Name = "TeslaConnectChargeButton";
-            this.TeslaConnectChargeButton.Size = new System.Drawing.Size(152, 78);
-            this.TeslaConnectChargeButton.TabIndex = 7;
-            this.TeslaConnectChargeButton.Text = "Şarj Cihazını Bağla";
-            this.TeslaConnectChargeButton.UseVisualStyleBackColor = true;
-            this.TeslaConnectChargeButton.Click += new System.EventHandler(this.TeslaConnectChargeButton_Click);
+            this.ToyotaChargeStationGroupBox.Controls.Add(this.ToyotaChargeStationBRadio);
+            this.ToyotaChargeStationGroupBox.Controls.Add(this.ToyotaChargeStationARadio);
+            this.ToyotaChargeStationGroupBox.Location = new System.Drawing.Point(104, 374);
+            this.ToyotaChargeStationGroupBox.Name = "ToyotaChargeStationGroupBox";
+            this.ToyotaChargeStationGroupBox.Size = new System.Drawing.Size(111, 73);
+            this.ToyotaChargeStationGroupBox.TabIndex = 15;
+            this.ToyotaChargeStationGroupBox.TabStop = false;
+            this.ToyotaChargeStationGroupBox.Text = "Şarj İstasyonları";
             // 
-            // TeslaDisconnectChargeButton
+            // ToyotaChargeStationBRadio
             // 
-            this.TeslaDisconnectChargeButton.Location = new System.Drawing.Point(545, 215);
-            this.TeslaDisconnectChargeButton.Name = "TeslaDisconnectChargeButton";
-            this.TeslaDisconnectChargeButton.Size = new System.Drawing.Size(152, 78);
-            this.TeslaDisconnectChargeButton.TabIndex = 6;
-            this.TeslaDisconnectChargeButton.Text = "Şarj Cihazını Çıkar";
-            this.TeslaDisconnectChargeButton.UseVisualStyleBackColor = true;
-            this.TeslaDisconnectChargeButton.Click += new System.EventHandler(this.TeslaDisconnectChargeButton_Click);
+            this.ToyotaChargeStationBRadio.AutoSize = true;
+            this.ToyotaChargeStationBRadio.Location = new System.Drawing.Point(6, 42);
+            this.ToyotaChargeStationBRadio.Name = "ToyotaChargeStationBRadio";
+            this.ToyotaChargeStationBRadio.Size = new System.Drawing.Size(101, 17);
+            this.ToyotaChargeStationBRadio.TabIndex = 1;
+            this.ToyotaChargeStationBRadio.TabStop = true;
+            this.ToyotaChargeStationBRadio.Text = "Şarj İstasyonu B";
+            this.ToyotaChargeStationBRadio.UseVisualStyleBackColor = true;
             // 
-            // TeslaStopButton
+            // ToyotaChargeStationARadio
             // 
-            this.TeslaStopButton.Location = new System.Drawing.Point(808, 215);
-            this.TeslaStopButton.Name = "TeslaStopButton";
-            this.TeslaStopButton.Size = new System.Drawing.Size(152, 78);
-            this.TeslaStopButton.TabIndex = 5;
-            this.TeslaStopButton.Text = "Simülasyonu Kapat";
-            this.TeslaStopButton.UseVisualStyleBackColor = true;
-            this.TeslaStopButton.Click += new System.EventHandler(this.TeslaStopButton_Click);
+            this.ToyotaChargeStationARadio.AutoSize = true;
+            this.ToyotaChargeStationARadio.Location = new System.Drawing.Point(6, 19);
+            this.ToyotaChargeStationARadio.Name = "ToyotaChargeStationARadio";
+            this.ToyotaChargeStationARadio.Size = new System.Drawing.Size(101, 17);
+            this.ToyotaChargeStationARadio.TabIndex = 0;
+            this.ToyotaChargeStationARadio.TabStop = true;
+            this.ToyotaChargeStationARadio.Text = "Şarj İstasyonu A";
+            this.ToyotaChargeStationARadio.UseVisualStyleBackColor = true;
             // 
-            // TeslaStartButton
+            // ToyotaCarStatusLabel
             // 
-            this.TeslaStartButton.Location = new System.Drawing.Point(19, 215);
-            this.TeslaStartButton.Name = "TeslaStartButton";
-            this.TeslaStartButton.Size = new System.Drawing.Size(152, 78);
-            this.TeslaStartButton.TabIndex = 2;
-            this.TeslaStartButton.Text = "Simülasyonu Çalıştır";
-            this.TeslaStartButton.UseVisualStyleBackColor = true;
-            this.TeslaStartButton.Click += new System.EventHandler(this.TeslaStartButton_Click);
+            this.ToyotaCarStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ToyotaCarStatusLabel.Location = new System.Drawing.Point(341, 327);
+            this.ToyotaCarStatusLabel.Name = "ToyotaCarStatusLabel";
+            this.ToyotaCarStatusLabel.Size = new System.Drawing.Size(318, 178);
+            this.ToyotaCarStatusLabel.TabIndex = 14;
+            this.ToyotaCarStatusLabel.Text = "Car Status";
             // 
-            // TeslaProgressBar
+            // ToyotaConnectChargeButton
             // 
-            this.TeslaProgressBar.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.TeslaProgressBar.AnimationSpeed = 500;
-            this.TeslaProgressBar.BackColor = System.Drawing.Color.Transparent;
-            this.TeslaProgressBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TeslaProgressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TeslaProgressBar.InnerColor = System.Drawing.Color.White;
-            this.TeslaProgressBar.InnerMargin = 2;
-            this.TeslaProgressBar.InnerWidth = -1;
-            this.TeslaProgressBar.Location = new System.Drawing.Point(647, 346);
-            this.TeslaProgressBar.MarqueeAnimationSpeed = 2000;
-            this.TeslaProgressBar.Name = "TeslaProgressBar";
-            this.TeslaProgressBar.OuterColor = System.Drawing.Color.Gray;
-            this.TeslaProgressBar.OuterMargin = -25;
-            this.TeslaProgressBar.OuterWidth = 26;
-            this.TeslaProgressBar.ProgressColor = System.Drawing.Color.Green;
-            this.TeslaProgressBar.ProgressWidth = 25;
-            this.TeslaProgressBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.TeslaProgressBar.Size = new System.Drawing.Size(150, 150);
-            this.TeslaProgressBar.StartAngle = 270;
-            this.TeslaProgressBar.SubscriptColor = System.Drawing.Color.White;
-            this.TeslaProgressBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.TeslaProgressBar.SubscriptText = "";
-            this.TeslaProgressBar.SuperscriptColor = System.Drawing.Color.White;
-            this.TeslaProgressBar.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.TeslaProgressBar.SuperscriptText = "";
-            this.TeslaProgressBar.TabIndex = 1;
-            this.TeslaProgressBar.Text = "%67";
-            this.TeslaProgressBar.TextMargin = new System.Windows.Forms.Padding(5);
-            this.TeslaProgressBar.Value = 68;
+            this.ToyotaConnectChargeButton.Location = new System.Drawing.Point(282, 215);
+            this.ToyotaConnectChargeButton.Name = "ToyotaConnectChargeButton";
+            this.ToyotaConnectChargeButton.Size = new System.Drawing.Size(152, 78);
+            this.ToyotaConnectChargeButton.TabIndex = 13;
+            this.ToyotaConnectChargeButton.Text = "Şarj Cihazını Bağla";
+            this.ToyotaConnectChargeButton.UseVisualStyleBackColor = true;
+            this.ToyotaConnectChargeButton.Click += new System.EventHandler(this.ToyotaConnectChargeButton_Click);
             // 
-            // TeslaPictureBox
+            // ToyotaDisconnectChargeButton
             // 
-            this.TeslaPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.TeslaPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("TeslaPictureBox.Image")));
-            this.TeslaPictureBox.InitialImage = null;
-            this.TeslaPictureBox.Location = new System.Drawing.Point(347, 6);
-            this.TeslaPictureBox.Name = "TeslaPictureBox";
-            this.TeslaPictureBox.Size = new System.Drawing.Size(270, 150);
-            this.TeslaPictureBox.TabIndex = 0;
-            this.TeslaPictureBox.TabStop = false;
-            this.TeslaPictureBox.WaitOnLoad = true;
+            this.ToyotaDisconnectChargeButton.Location = new System.Drawing.Point(545, 215);
+            this.ToyotaDisconnectChargeButton.Name = "ToyotaDisconnectChargeButton";
+            this.ToyotaDisconnectChargeButton.Size = new System.Drawing.Size(152, 78);
+            this.ToyotaDisconnectChargeButton.TabIndex = 12;
+            this.ToyotaDisconnectChargeButton.Text = "Şarj Cihazını Çıkar";
+            this.ToyotaDisconnectChargeButton.UseVisualStyleBackColor = true;
+            this.ToyotaDisconnectChargeButton.Click += new System.EventHandler(this.ToyotaDisconnectChargeButton_Click);
             // 
-            // MercedesTab
+            // ToyotaStopButton
             // 
-            this.MercedesTab.Controls.Add(this.MercedesProgressBar);
-            this.MercedesTab.Controls.Add(this.MercedesChargeStationAGroupBox);
-            this.MercedesTab.Controls.Add(this.MercedesCarStatusLabel);
-            this.MercedesTab.Controls.Add(this.MercedesConnectChargeButton);
-            this.MercedesTab.Controls.Add(this.MercedesDisconnectChargeButton);
-            this.MercedesTab.Controls.Add(this.MercedesStopButton);
-            this.MercedesTab.Controls.Add(this.MercedesStartButton);
-            this.MercedesTab.Controls.Add(this.MercedesPictureBox);
-            this.MercedesTab.Location = new System.Drawing.Point(4, 22);
-            this.MercedesTab.Name = "MercedesTab";
-            this.MercedesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MercedesTab.Size = new System.Drawing.Size(980, 508);
-            this.MercedesTab.TabIndex = 1;
-            this.MercedesTab.Text = "Mercedes Smart Fortwo";
-            this.MercedesTab.UseVisualStyleBackColor = true;
+            this.ToyotaStopButton.Location = new System.Drawing.Point(808, 215);
+            this.ToyotaStopButton.Name = "ToyotaStopButton";
+            this.ToyotaStopButton.Size = new System.Drawing.Size(152, 78);
+            this.ToyotaStopButton.TabIndex = 11;
+            this.ToyotaStopButton.Text = "Simülasyonu Kapat";
+            this.ToyotaStopButton.UseVisualStyleBackColor = true;
+            this.ToyotaStopButton.Click += new System.EventHandler(this.ToyotaStopButton_Click);
+            // 
+            // ToyotaStartButton
+            // 
+            this.ToyotaStartButton.Location = new System.Drawing.Point(19, 215);
+            this.ToyotaStartButton.Name = "ToyotaStartButton";
+            this.ToyotaStartButton.Size = new System.Drawing.Size(152, 78);
+            this.ToyotaStartButton.TabIndex = 8;
+            this.ToyotaStartButton.Text = "Simülasyonu Çalıştır";
+            this.ToyotaStartButton.UseVisualStyleBackColor = true;
+            this.ToyotaStartButton.Click += new System.EventHandler(this.ToyotaStartButton_Click);
+            // 
+            // ToyotaProgressBar
+            // 
+            this.ToyotaProgressBar.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.ToyotaProgressBar.AnimationSpeed = 500;
+            this.ToyotaProgressBar.BackColor = System.Drawing.Color.Transparent;
+            this.ToyotaProgressBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ToyotaProgressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ToyotaProgressBar.InnerColor = System.Drawing.Color.White;
+            this.ToyotaProgressBar.InnerMargin = 2;
+            this.ToyotaProgressBar.InnerWidth = -1;
+            this.ToyotaProgressBar.Location = new System.Drawing.Point(727, 346);
+            this.ToyotaProgressBar.MarqueeAnimationSpeed = 2000;
+            this.ToyotaProgressBar.Name = "ToyotaProgressBar";
+            this.ToyotaProgressBar.OuterColor = System.Drawing.Color.Gray;
+            this.ToyotaProgressBar.OuterMargin = -25;
+            this.ToyotaProgressBar.OuterWidth = 26;
+            this.ToyotaProgressBar.ProgressColor = System.Drawing.Color.Green;
+            this.ToyotaProgressBar.ProgressWidth = 25;
+            this.ToyotaProgressBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.ToyotaProgressBar.Size = new System.Drawing.Size(150, 150);
+            this.ToyotaProgressBar.StartAngle = 270;
+            this.ToyotaProgressBar.SubscriptColor = System.Drawing.Color.White;
+            this.ToyotaProgressBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.ToyotaProgressBar.SubscriptText = "";
+            this.ToyotaProgressBar.SuperscriptColor = System.Drawing.Color.White;
+            this.ToyotaProgressBar.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.ToyotaProgressBar.SuperscriptText = "";
+            this.ToyotaProgressBar.TabIndex = 2;
+            this.ToyotaProgressBar.Text = "%67";
+            this.ToyotaProgressBar.TextMargin = new System.Windows.Forms.Padding(5);
+            this.ToyotaProgressBar.Value = 68;
+            // 
+            // ToyotaPictureBox
+            // 
+            this.ToyotaPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ToyotaPictureBox.Image")));
+            this.ToyotaPictureBox.InitialImage = null;
+            this.ToyotaPictureBox.Location = new System.Drawing.Point(347, 6);
+            this.ToyotaPictureBox.Name = "ToyotaPictureBox";
+            this.ToyotaPictureBox.Size = new System.Drawing.Size(270, 150);
+            this.ToyotaPictureBox.TabIndex = 1;
+            this.ToyotaPictureBox.TabStop = false;
+            this.ToyotaPictureBox.WaitOnLoad = true;
+            // 
+            // SmartEQTab
+            // 
+            this.SmartEQTab.Controls.Add(this.MercedesProgressBar);
+            this.SmartEQTab.Controls.Add(this.MercedesChargeStationAGroupBox);
+            this.SmartEQTab.Controls.Add(this.MercedesCarStatusLabel);
+            this.SmartEQTab.Controls.Add(this.MercedesConnectChargeButton);
+            this.SmartEQTab.Controls.Add(this.MercedesDisconnectChargeButton);
+            this.SmartEQTab.Controls.Add(this.MercedesStopButton);
+            this.SmartEQTab.Controls.Add(this.MercedesStartButton);
+            this.SmartEQTab.Controls.Add(this.MercedesPictureBox);
+            this.SmartEQTab.Location = new System.Drawing.Point(4, 22);
+            this.SmartEQTab.Name = "SmartEQTab";
+            this.SmartEQTab.Padding = new System.Windows.Forms.Padding(3);
+            this.SmartEQTab.Size = new System.Drawing.Size(980, 508);
+            this.SmartEQTab.TabIndex = 1;
+            this.SmartEQTab.Text = "Smart EQ ForTwo";
+            this.SmartEQTab.UseVisualStyleBackColor = true;
+            // 
+            // MercedesProgressBar
+            // 
+            this.MercedesProgressBar.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.MercedesProgressBar.AnimationSpeed = 500;
+            this.MercedesProgressBar.BackColor = System.Drawing.Color.Transparent;
+            this.MercedesProgressBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.MercedesProgressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.MercedesProgressBar.InnerColor = System.Drawing.Color.White;
+            this.MercedesProgressBar.InnerMargin = 2;
+            this.MercedesProgressBar.InnerWidth = -1;
+            this.MercedesProgressBar.Location = new System.Drawing.Point(727, 346);
+            this.MercedesProgressBar.MarqueeAnimationSpeed = 2000;
+            this.MercedesProgressBar.Name = "MercedesProgressBar";
+            this.MercedesProgressBar.OuterColor = System.Drawing.Color.Gray;
+            this.MercedesProgressBar.OuterMargin = -25;
+            this.MercedesProgressBar.OuterWidth = 26;
+            this.MercedesProgressBar.ProgressColor = System.Drawing.Color.Green;
+            this.MercedesProgressBar.ProgressWidth = 25;
+            this.MercedesProgressBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.MercedesProgressBar.Size = new System.Drawing.Size(150, 150);
+            this.MercedesProgressBar.StartAngle = 270;
+            this.MercedesProgressBar.SubscriptColor = System.Drawing.Color.White;
+            this.MercedesProgressBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.MercedesProgressBar.SubscriptText = "";
+            this.MercedesProgressBar.SuperscriptColor = System.Drawing.Color.White;
+            this.MercedesProgressBar.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.MercedesProgressBar.SuperscriptText = "";
+            this.MercedesProgressBar.TabIndex = 17;
+            this.MercedesProgressBar.Text = "%67";
+            this.MercedesProgressBar.TextMargin = new System.Windows.Forms.Padding(5);
+            this.MercedesProgressBar.Value = 68;
             // 
             // MercedesChargeStationAGroupBox
             // 
             this.MercedesChargeStationAGroupBox.Controls.Add(this.MercedesChargeStationBRadio);
             this.MercedesChargeStationAGroupBox.Controls.Add(this.MercedesChargeStationARadio);
-            this.MercedesChargeStationAGroupBox.Location = new System.Drawing.Point(182, 377);
+            this.MercedesChargeStationAGroupBox.Location = new System.Drawing.Point(104, 374);
             this.MercedesChargeStationAGroupBox.Name = "MercedesChargeStationAGroupBox";
             this.MercedesChargeStationAGroupBox.Size = new System.Drawing.Size(111, 73);
             this.MercedesChargeStationAGroupBox.TabIndex = 16;
@@ -288,11 +366,10 @@
             // 
             // MercedesCarStatusLabel
             // 
-            this.MercedesCarStatusLabel.AutoSize = true;
             this.MercedesCarStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.MercedesCarStatusLabel.Location = new System.Drawing.Point(368, 396);
+            this.MercedesCarStatusLabel.Location = new System.Drawing.Point(341, 327);
             this.MercedesCarStatusLabel.Name = "MercedesCarStatusLabel";
-            this.MercedesCarStatusLabel.Size = new System.Drawing.Size(143, 31);
+            this.MercedesCarStatusLabel.Size = new System.Drawing.Size(318, 178);
             this.MercedesCarStatusLabel.TabIndex = 15;
             this.MercedesCarStatusLabel.Text = "Car Status";
             // 
@@ -347,241 +424,161 @@
             this.MercedesPictureBox.TabStop = false;
             this.MercedesPictureBox.WaitOnLoad = true;
             // 
-            // ToyotaTab
+            // TeslaTab
             // 
-            this.ToyotaTab.Controls.Add(this.ToyotaChargeStationGroupBox);
-            this.ToyotaTab.Controls.Add(this.ToyotaCarStatusLabel);
-            this.ToyotaTab.Controls.Add(this.ToyotaConnectChargeButton);
-            this.ToyotaTab.Controls.Add(this.ToyotaDisconnectChargeButton);
-            this.ToyotaTab.Controls.Add(this.ToyotaStopButton);
-            this.ToyotaTab.Controls.Add(this.ToyotaStartButton);
-            this.ToyotaTab.Controls.Add(this.ToyotaProgressBar);
-            this.ToyotaTab.Controls.Add(this.ToyotaPictureBox);
-            this.ToyotaTab.Location = new System.Drawing.Point(4, 22);
-            this.ToyotaTab.Name = "ToyotaTab";
-            this.ToyotaTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ToyotaTab.Size = new System.Drawing.Size(980, 508);
-            this.ToyotaTab.TabIndex = 2;
-            this.ToyotaTab.Text = "Toyota BZ4X";
-            this.ToyotaTab.UseVisualStyleBackColor = true;
+            this.TeslaTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.TeslaTab.Controls.Add(this.TeslaChargeStationAGroupBox);
+            this.TeslaTab.Controls.Add(this.TeslaCarStatusLabel);
+            this.TeslaTab.Controls.Add(this.TeslaConnectChargeButton);
+            this.TeslaTab.Controls.Add(this.TeslaDisconnectChargeButton);
+            this.TeslaTab.Controls.Add(this.TeslaStopButton);
+            this.TeslaTab.Controls.Add(this.TeslaStartButton);
+            this.TeslaTab.Controls.Add(this.TeslaProgressBar);
+            this.TeslaTab.Controls.Add(this.TeslaPictureBox);
+            this.TeslaTab.Location = new System.Drawing.Point(4, 22);
+            this.TeslaTab.Name = "TeslaTab";
+            this.TeslaTab.Padding = new System.Windows.Forms.Padding(3);
+            this.TeslaTab.Size = new System.Drawing.Size(980, 508);
+            this.TeslaTab.TabIndex = 0;
+            this.TeslaTab.Text = "Tesla Model 3";
             // 
-            // ToyotaChargeStationGroupBox
+            // TeslaChargeStationAGroupBox
             // 
-            this.ToyotaChargeStationGroupBox.Controls.Add(this.ToyotaChargeStationBRadio);
-            this.ToyotaChargeStationGroupBox.Controls.Add(this.ToyotaChargeStationARadio);
-            this.ToyotaChargeStationGroupBox.Location = new System.Drawing.Point(182, 377);
-            this.ToyotaChargeStationGroupBox.Name = "ToyotaChargeStationGroupBox";
-            this.ToyotaChargeStationGroupBox.Size = new System.Drawing.Size(111, 73);
-            this.ToyotaChargeStationGroupBox.TabIndex = 15;
-            this.ToyotaChargeStationGroupBox.TabStop = false;
-            this.ToyotaChargeStationGroupBox.Text = "Şarj İstasyonları";
+            this.TeslaChargeStationAGroupBox.Controls.Add(this.TeslaChargeStationBRadio);
+            this.TeslaChargeStationAGroupBox.Controls.Add(this.TeslaChargeStationARadio);
+            this.TeslaChargeStationAGroupBox.Location = new System.Drawing.Point(104, 374);
+            this.TeslaChargeStationAGroupBox.Name = "TeslaChargeStationAGroupBox";
+            this.TeslaChargeStationAGroupBox.Size = new System.Drawing.Size(111, 73);
+            this.TeslaChargeStationAGroupBox.TabIndex = 16;
+            this.TeslaChargeStationAGroupBox.TabStop = false;
+            this.TeslaChargeStationAGroupBox.Text = "Şarj İstasyonları";
             // 
-            // ToyotaChargeStationBRadio
+            // TeslaChargeStationBRadio
             // 
-            this.ToyotaChargeStationBRadio.AutoSize = true;
-            this.ToyotaChargeStationBRadio.Location = new System.Drawing.Point(6, 42);
-            this.ToyotaChargeStationBRadio.Name = "ToyotaChargeStationBRadio";
-            this.ToyotaChargeStationBRadio.Size = new System.Drawing.Size(101, 17);
-            this.ToyotaChargeStationBRadio.TabIndex = 1;
-            this.ToyotaChargeStationBRadio.TabStop = true;
-            this.ToyotaChargeStationBRadio.Text = "Şarj İstasyonu B";
-            this.ToyotaChargeStationBRadio.UseVisualStyleBackColor = true;
+            this.TeslaChargeStationBRadio.AutoSize = true;
+            this.TeslaChargeStationBRadio.Location = new System.Drawing.Point(6, 42);
+            this.TeslaChargeStationBRadio.Name = "TeslaChargeStationBRadio";
+            this.TeslaChargeStationBRadio.Size = new System.Drawing.Size(101, 17);
+            this.TeslaChargeStationBRadio.TabIndex = 1;
+            this.TeslaChargeStationBRadio.TabStop = true;
+            this.TeslaChargeStationBRadio.Text = "Şarj İstasyonu B";
+            this.TeslaChargeStationBRadio.UseVisualStyleBackColor = true;
             // 
-            // ToyotaChargeStationARadio
+            // TeslaChargeStationARadio
             // 
-            this.ToyotaChargeStationARadio.AutoSize = true;
-            this.ToyotaChargeStationARadio.Location = new System.Drawing.Point(6, 19);
-            this.ToyotaChargeStationARadio.Name = "ToyotaChargeStationARadio";
-            this.ToyotaChargeStationARadio.Size = new System.Drawing.Size(101, 17);
-            this.ToyotaChargeStationARadio.TabIndex = 0;
-            this.ToyotaChargeStationARadio.TabStop = true;
-            this.ToyotaChargeStationARadio.Text = "Şarj İstasyonu A";
-            this.ToyotaChargeStationARadio.UseVisualStyleBackColor = true;
+            this.TeslaChargeStationARadio.AutoSize = true;
+            this.TeslaChargeStationARadio.Location = new System.Drawing.Point(6, 19);
+            this.TeslaChargeStationARadio.Name = "TeslaChargeStationARadio";
+            this.TeslaChargeStationARadio.Size = new System.Drawing.Size(101, 17);
+            this.TeslaChargeStationARadio.TabIndex = 0;
+            this.TeslaChargeStationARadio.TabStop = true;
+            this.TeslaChargeStationARadio.Text = "Şarj İstasyonu A";
+            this.TeslaChargeStationARadio.UseVisualStyleBackColor = true;
             // 
-            // ToyotaCarStatusLabel
+            // TeslaCarStatusLabel
             // 
-            this.ToyotaCarStatusLabel.AutoSize = true;
-            this.ToyotaCarStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ToyotaCarStatusLabel.Location = new System.Drawing.Point(368, 396);
-            this.ToyotaCarStatusLabel.Name = "ToyotaCarStatusLabel";
-            this.ToyotaCarStatusLabel.Size = new System.Drawing.Size(143, 31);
-            this.ToyotaCarStatusLabel.TabIndex = 14;
-            this.ToyotaCarStatusLabel.Text = "Car Status";
+            this.TeslaCarStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TeslaCarStatusLabel.Location = new System.Drawing.Point(341, 327);
+            this.TeslaCarStatusLabel.Name = "TeslaCarStatusLabel";
+            this.TeslaCarStatusLabel.Size = new System.Drawing.Size(318, 178);
+            this.TeslaCarStatusLabel.TabIndex = 15;
+            this.TeslaCarStatusLabel.Text = "Car Status";
             // 
-            // ToyotaConnectChargeButton
+            // TeslaConnectChargeButton
             // 
-            this.ToyotaConnectChargeButton.Location = new System.Drawing.Point(282, 215);
-            this.ToyotaConnectChargeButton.Name = "ToyotaConnectChargeButton";
-            this.ToyotaConnectChargeButton.Size = new System.Drawing.Size(152, 78);
-            this.ToyotaConnectChargeButton.TabIndex = 13;
-            this.ToyotaConnectChargeButton.Text = "Şarj Cihazını Bağla";
-            this.ToyotaConnectChargeButton.UseVisualStyleBackColor = true;
-            this.ToyotaConnectChargeButton.Click += new System.EventHandler(this.ToyotaConnectChargeButton_Click);
+            this.TeslaConnectChargeButton.Location = new System.Drawing.Point(282, 215);
+            this.TeslaConnectChargeButton.Name = "TeslaConnectChargeButton";
+            this.TeslaConnectChargeButton.Size = new System.Drawing.Size(152, 78);
+            this.TeslaConnectChargeButton.TabIndex = 7;
+            this.TeslaConnectChargeButton.Text = "Şarj Cihazını Bağla";
+            this.TeslaConnectChargeButton.UseVisualStyleBackColor = true;
+            this.TeslaConnectChargeButton.Click += new System.EventHandler(this.TeslaConnectChargeButton_Click);
             // 
-            // ToyotaDisconnectChargeButton
+            // TeslaDisconnectChargeButton
             // 
-            this.ToyotaDisconnectChargeButton.Location = new System.Drawing.Point(545, 215);
-            this.ToyotaDisconnectChargeButton.Name = "ToyotaDisconnectChargeButton";
-            this.ToyotaDisconnectChargeButton.Size = new System.Drawing.Size(152, 78);
-            this.ToyotaDisconnectChargeButton.TabIndex = 12;
-            this.ToyotaDisconnectChargeButton.Text = "Şarj Cihazını Çıkar";
-            this.ToyotaDisconnectChargeButton.UseVisualStyleBackColor = true;
-            this.ToyotaDisconnectChargeButton.Click += new System.EventHandler(this.ToyotaDisconnectChargeButton_Click);
+            this.TeslaDisconnectChargeButton.Location = new System.Drawing.Point(545, 215);
+            this.TeslaDisconnectChargeButton.Name = "TeslaDisconnectChargeButton";
+            this.TeslaDisconnectChargeButton.Size = new System.Drawing.Size(152, 78);
+            this.TeslaDisconnectChargeButton.TabIndex = 6;
+            this.TeslaDisconnectChargeButton.Text = "Şarj Cihazını Çıkar";
+            this.TeslaDisconnectChargeButton.UseVisualStyleBackColor = true;
+            this.TeslaDisconnectChargeButton.Click += new System.EventHandler(this.TeslaDisconnectChargeButton_Click);
             // 
-            // ToyotaStopButton
+            // TeslaStopButton
             // 
-            this.ToyotaStopButton.Location = new System.Drawing.Point(808, 215);
-            this.ToyotaStopButton.Name = "ToyotaStopButton";
-            this.ToyotaStopButton.Size = new System.Drawing.Size(152, 78);
-            this.ToyotaStopButton.TabIndex = 11;
-            this.ToyotaStopButton.Text = "Simülasyonu Kapat";
-            this.ToyotaStopButton.UseVisualStyleBackColor = true;
-            this.ToyotaStopButton.Click += new System.EventHandler(this.ToyotaStopButton_Click);
+            this.TeslaStopButton.Location = new System.Drawing.Point(808, 215);
+            this.TeslaStopButton.Name = "TeslaStopButton";
+            this.TeslaStopButton.Size = new System.Drawing.Size(152, 78);
+            this.TeslaStopButton.TabIndex = 5;
+            this.TeslaStopButton.Text = "Simülasyonu Kapat";
+            this.TeslaStopButton.UseVisualStyleBackColor = true;
+            this.TeslaStopButton.Click += new System.EventHandler(this.TeslaStopButton_Click);
             // 
-            // ToyotaStartButton
+            // TeslaStartButton
             // 
-            this.ToyotaStartButton.Location = new System.Drawing.Point(19, 215);
-            this.ToyotaStartButton.Name = "ToyotaStartButton";
-            this.ToyotaStartButton.Size = new System.Drawing.Size(152, 78);
-            this.ToyotaStartButton.TabIndex = 8;
-            this.ToyotaStartButton.Text = "Simülasyonu Çalıştır";
-            this.ToyotaStartButton.UseVisualStyleBackColor = true;
-            this.ToyotaStartButton.Click += new System.EventHandler(this.ToyotaStartButton_Click);
+            this.TeslaStartButton.Location = new System.Drawing.Point(19, 215);
+            this.TeslaStartButton.Name = "TeslaStartButton";
+            this.TeslaStartButton.Size = new System.Drawing.Size(152, 78);
+            this.TeslaStartButton.TabIndex = 2;
+            this.TeslaStartButton.Text = "Simülasyonu Çalıştır";
+            this.TeslaStartButton.UseVisualStyleBackColor = true;
+            this.TeslaStartButton.Click += new System.EventHandler(this.TeslaStartButton_Click);
             // 
-            // ToyotaProgressBar
+            // TeslaProgressBar
             // 
-            this.ToyotaProgressBar.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.ToyotaProgressBar.AnimationSpeed = 500;
-            this.ToyotaProgressBar.BackColor = System.Drawing.Color.Transparent;
-            this.ToyotaProgressBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ToyotaProgressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ToyotaProgressBar.InnerColor = System.Drawing.Color.White;
-            this.ToyotaProgressBar.InnerMargin = 2;
-            this.ToyotaProgressBar.InnerWidth = -1;
-            this.ToyotaProgressBar.Location = new System.Drawing.Point(647, 346);
-            this.ToyotaProgressBar.MarqueeAnimationSpeed = 2000;
-            this.ToyotaProgressBar.Name = "ToyotaProgressBar";
-            this.ToyotaProgressBar.OuterColor = System.Drawing.Color.Gray;
-            this.ToyotaProgressBar.OuterMargin = -25;
-            this.ToyotaProgressBar.OuterWidth = 26;
-            this.ToyotaProgressBar.ProgressColor = System.Drawing.Color.Green;
-            this.ToyotaProgressBar.ProgressWidth = 25;
-            this.ToyotaProgressBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.ToyotaProgressBar.Size = new System.Drawing.Size(150, 150);
-            this.ToyotaProgressBar.StartAngle = 270;
-            this.ToyotaProgressBar.SubscriptColor = System.Drawing.Color.White;
-            this.ToyotaProgressBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.ToyotaProgressBar.SubscriptText = "";
-            this.ToyotaProgressBar.SuperscriptColor = System.Drawing.Color.White;
-            this.ToyotaProgressBar.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.ToyotaProgressBar.SuperscriptText = "";
-            this.ToyotaProgressBar.TabIndex = 2;
-            this.ToyotaProgressBar.Text = "%67";
-            this.ToyotaProgressBar.TextMargin = new System.Windows.Forms.Padding(5);
-            this.ToyotaProgressBar.Value = 68;
+            this.TeslaProgressBar.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.TeslaProgressBar.AnimationSpeed = 500;
+            this.TeslaProgressBar.BackColor = System.Drawing.Color.Transparent;
+            this.TeslaProgressBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TeslaProgressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TeslaProgressBar.InnerColor = System.Drawing.Color.White;
+            this.TeslaProgressBar.InnerMargin = 2;
+            this.TeslaProgressBar.InnerWidth = -1;
+            this.TeslaProgressBar.Location = new System.Drawing.Point(727, 346);
+            this.TeslaProgressBar.MarqueeAnimationSpeed = 2000;
+            this.TeslaProgressBar.Name = "TeslaProgressBar";
+            this.TeslaProgressBar.OuterColor = System.Drawing.Color.Gray;
+            this.TeslaProgressBar.OuterMargin = -25;
+            this.TeslaProgressBar.OuterWidth = 26;
+            this.TeslaProgressBar.ProgressColor = System.Drawing.Color.Green;
+            this.TeslaProgressBar.ProgressWidth = 25;
+            this.TeslaProgressBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.TeslaProgressBar.Size = new System.Drawing.Size(150, 150);
+            this.TeslaProgressBar.StartAngle = 270;
+            this.TeslaProgressBar.SubscriptColor = System.Drawing.Color.White;
+            this.TeslaProgressBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.TeslaProgressBar.SubscriptText = "";
+            this.TeslaProgressBar.SuperscriptColor = System.Drawing.Color.White;
+            this.TeslaProgressBar.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.TeslaProgressBar.SuperscriptText = "";
+            this.TeslaProgressBar.TabIndex = 1;
+            this.TeslaProgressBar.Text = "%67";
+            this.TeslaProgressBar.TextMargin = new System.Windows.Forms.Padding(5);
+            this.TeslaProgressBar.Value = 68;
             // 
-            // ToyotaPictureBox
+            // TeslaPictureBox
             // 
-            this.ToyotaPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ToyotaPictureBox.Image")));
-            this.ToyotaPictureBox.InitialImage = null;
-            this.ToyotaPictureBox.Location = new System.Drawing.Point(347, 6);
-            this.ToyotaPictureBox.Name = "ToyotaPictureBox";
-            this.ToyotaPictureBox.Size = new System.Drawing.Size(270, 150);
-            this.ToyotaPictureBox.TabIndex = 1;
-            this.ToyotaPictureBox.TabStop = false;
-            this.ToyotaPictureBox.WaitOnLoad = true;
+            this.TeslaPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.TeslaPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("TeslaPictureBox.Image")));
+            this.TeslaPictureBox.InitialImage = null;
+            this.TeslaPictureBox.Location = new System.Drawing.Point(347, 6);
+            this.TeslaPictureBox.Name = "TeslaPictureBox";
+            this.TeslaPictureBox.Size = new System.Drawing.Size(270, 150);
+            this.TeslaPictureBox.TabIndex = 0;
+            this.TeslaPictureBox.TabStop = false;
+            this.TeslaPictureBox.WaitOnLoad = true;
             // 
-            // MerkezTab
+            // Tabs
             // 
-            this.MerkezTab.Controls.Add(this.ŞarjGroupBoxB);
-            this.MerkezTab.Controls.Add(this.ŞarjGroupBoxA);
-            this.MerkezTab.Location = new System.Drawing.Point(4, 22);
-            this.MerkezTab.Name = "MerkezTab";
-            this.MerkezTab.Size = new System.Drawing.Size(980, 508);
-            this.MerkezTab.TabIndex = 3;
-            this.MerkezTab.Text = "Merkez";
-            this.MerkezTab.UseVisualStyleBackColor = true;
-            // 
-            // ŞarjGroupBoxB
-            // 
-            this.ŞarjGroupBoxB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ŞarjGroupBoxB.Controls.Add(this.ŞarjİstasyonuBLabel);
-            this.ŞarjGroupBoxB.Location = new System.Drawing.Point(485, 3);
-            this.ŞarjGroupBoxB.Name = "ŞarjGroupBoxB";
-            this.ŞarjGroupBoxB.Size = new System.Drawing.Size(489, 505);
-            this.ŞarjGroupBoxB.TabIndex = 2;
-            this.ŞarjGroupBoxB.TabStop = false;
-            this.ŞarjGroupBoxB.Text = "Şarj İstasyonu B";
-            this.ŞarjGroupBoxB.UseCompatibleTextRendering = true;
-            // 
-            // ŞarjİstasyonuBLabel
-            // 
-            this.ŞarjİstasyonuBLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ŞarjİstasyonuBLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ŞarjİstasyonuBLabel.Location = new System.Drawing.Point(47, 58);
-            this.ŞarjİstasyonuBLabel.Name = "ŞarjİstasyonuBLabel";
-            this.ŞarjİstasyonuBLabel.Size = new System.Drawing.Size(392, 389);
-            this.ŞarjİstasyonuBLabel.TabIndex = 1;
-            this.ŞarjİstasyonuBLabel.Text = "label1";
-            // 
-            // ŞarjGroupBoxA
-            // 
-            this.ŞarjGroupBoxA.Controls.Add(this.ŞarjİstasyonuALabel);
-            this.ŞarjGroupBoxA.Location = new System.Drawing.Point(3, 3);
-            this.ŞarjGroupBoxA.Name = "ŞarjGroupBoxA";
-            this.ŞarjGroupBoxA.Size = new System.Drawing.Size(485, 505);
-            this.ŞarjGroupBoxA.TabIndex = 1;
-            this.ŞarjGroupBoxA.TabStop = false;
-            this.ŞarjGroupBoxA.Text = "Şarj İstasyonu A";
-            this.ŞarjGroupBoxA.UseCompatibleTextRendering = true;
-            // 
-            // ŞarjİstasyonuALabel
-            // 
-            this.ŞarjİstasyonuALabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ŞarjİstasyonuALabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ŞarjİstasyonuALabel.Location = new System.Drawing.Point(45, 58);
-            this.ŞarjİstasyonuALabel.Name = "ŞarjİstasyonuALabel";
-            this.ŞarjİstasyonuALabel.Size = new System.Drawing.Size(392, 389);
-            this.ŞarjİstasyonuALabel.TabIndex = 0;
-            this.ŞarjİstasyonuALabel.Text = "label1";
-            // 
-            // MercedesProgressBar
-            // 
-            this.MercedesProgressBar.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.MercedesProgressBar.AnimationSpeed = 500;
-            this.MercedesProgressBar.BackColor = System.Drawing.Color.Transparent;
-            this.MercedesProgressBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.MercedesProgressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.MercedesProgressBar.InnerColor = System.Drawing.Color.White;
-            this.MercedesProgressBar.InnerMargin = 2;
-            this.MercedesProgressBar.InnerWidth = -1;
-            this.MercedesProgressBar.Location = new System.Drawing.Point(647, 346);
-            this.MercedesProgressBar.MarqueeAnimationSpeed = 2000;
-            this.MercedesProgressBar.Name = "MercedesProgressBar";
-            this.MercedesProgressBar.OuterColor = System.Drawing.Color.Gray;
-            this.MercedesProgressBar.OuterMargin = -25;
-            this.MercedesProgressBar.OuterWidth = 26;
-            this.MercedesProgressBar.ProgressColor = System.Drawing.Color.Green;
-            this.MercedesProgressBar.ProgressWidth = 25;
-            this.MercedesProgressBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.MercedesProgressBar.Size = new System.Drawing.Size(150, 150);
-            this.MercedesProgressBar.StartAngle = 270;
-            this.MercedesProgressBar.SubscriptColor = System.Drawing.Color.White;
-            this.MercedesProgressBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.MercedesProgressBar.SubscriptText = "";
-            this.MercedesProgressBar.SuperscriptColor = System.Drawing.Color.White;
-            this.MercedesProgressBar.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.MercedesProgressBar.SuperscriptText = "";
-            this.MercedesProgressBar.TabIndex = 17;
-            this.MercedesProgressBar.Text = "%67";
-            this.MercedesProgressBar.TextMargin = new System.Windows.Forms.Padding(5);
-            this.MercedesProgressBar.Value = 68;
+            this.Tabs.Controls.Add(this.TeslaTab);
+            this.Tabs.Controls.Add(this.SmartEQTab);
+            this.Tabs.Controls.Add(this.ToyotaTab);
+            this.Tabs.Controls.Add(this.MerkezTab);
+            this.Tabs.Location = new System.Drawing.Point(-4, 0);
+            this.Tabs.Name = "Tabs";
+            this.Tabs.SelectedIndex = 0;
+            this.Tabs.Size = new System.Drawing.Size(988, 534);
+            this.Tabs.TabIndex = 0;
             // 
             // Form1
             // 
@@ -595,70 +592,66 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EV Charger Tracking Program";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Tabs.ResumeLayout(false);
-            this.TeslaTab.ResumeLayout(false);
-            this.TeslaTab.PerformLayout();
-            this.TeslaChargeStationAGroupBox.ResumeLayout(false);
-            this.TeslaChargeStationAGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TeslaPictureBox)).EndInit();
-            this.MercedesTab.ResumeLayout(false);
-            this.MercedesTab.PerformLayout();
-            this.MercedesChargeStationAGroupBox.ResumeLayout(false);
-            this.MercedesChargeStationAGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MercedesPictureBox)).EndInit();
-            this.ToyotaTab.ResumeLayout(false);
-            this.ToyotaTab.PerformLayout();
-            this.ToyotaChargeStationGroupBox.ResumeLayout(false);
-            this.ToyotaChargeStationGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ToyotaPictureBox)).EndInit();
             this.MerkezTab.ResumeLayout(false);
             this.ŞarjGroupBoxB.ResumeLayout(false);
             this.ŞarjGroupBoxA.ResumeLayout(false);
+            this.ToyotaTab.ResumeLayout(false);
+            this.ToyotaChargeStationGroupBox.ResumeLayout(false);
+            this.ToyotaChargeStationGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ToyotaPictureBox)).EndInit();
+            this.SmartEQTab.ResumeLayout(false);
+            this.MercedesChargeStationAGroupBox.ResumeLayout(false);
+            this.MercedesChargeStationAGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MercedesPictureBox)).EndInit();
+            this.TeslaTab.ResumeLayout(false);
+            this.TeslaChargeStationAGroupBox.ResumeLayout(false);
+            this.TeslaChargeStationAGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TeslaPictureBox)).EndInit();
+            this.Tabs.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl Tabs;
-        private System.Windows.Forms.TabPage TeslaTab;
-        private System.Windows.Forms.TabPage MercedesTab;
-        private System.Windows.Forms.TabPage ToyotaTab;
-        private System.Windows.Forms.PictureBox TeslaPictureBox;
-        private System.Windows.Forms.PictureBox MercedesPictureBox;
-        private System.Windows.Forms.PictureBox ToyotaPictureBox;
-        private CircularProgressBar.CircularProgressBar TeslaProgressBar;
-        private System.Windows.Forms.Button TeslaStartButton;
-        private CircularProgressBar.CircularProgressBar ToyotaProgressBar;
-        private System.Windows.Forms.Button TeslaStopButton;
         private System.Windows.Forms.TabPage MerkezTab;
         private System.Windows.Forms.GroupBox ŞarjGroupBoxB;
-        private System.Windows.Forms.GroupBox ŞarjGroupBoxA;
         private System.Windows.Forms.Label ŞarjİstasyonuBLabel;
+        private System.Windows.Forms.GroupBox ŞarjGroupBoxA;
         private System.Windows.Forms.Label ŞarjİstasyonuALabel;
-        private System.Windows.Forms.Button TeslaConnectChargeButton;
-        private System.Windows.Forms.Button TeslaDisconnectChargeButton;
-        private System.Windows.Forms.Button MercedesConnectChargeButton;
-        private System.Windows.Forms.Button MercedesDisconnectChargeButton;
-        private System.Windows.Forms.Button MercedesStopButton;
-        private System.Windows.Forms.Button MercedesStartButton;
+        private System.Windows.Forms.TabPage ToyotaTab;
+        private System.Windows.Forms.GroupBox ToyotaChargeStationGroupBox;
+        private System.Windows.Forms.RadioButton ToyotaChargeStationBRadio;
+        private System.Windows.Forms.RadioButton ToyotaChargeStationARadio;
+        private System.Windows.Forms.Label ToyotaCarStatusLabel;
         private System.Windows.Forms.Button ToyotaConnectChargeButton;
         private System.Windows.Forms.Button ToyotaDisconnectChargeButton;
         private System.Windows.Forms.Button ToyotaStopButton;
         private System.Windows.Forms.Button ToyotaStartButton;
-        private System.Windows.Forms.Label TeslaCarStatusLabel;
-        private System.Windows.Forms.Label MercedesCarStatusLabel;
-        private System.Windows.Forms.Label ToyotaCarStatusLabel;
-        private System.Windows.Forms.GroupBox ToyotaChargeStationGroupBox;
-        private System.Windows.Forms.RadioButton ToyotaChargeStationBRadio;
-        private System.Windows.Forms.RadioButton ToyotaChargeStationARadio;
-        private System.Windows.Forms.GroupBox TeslaChargeStationAGroupBox;
-        private System.Windows.Forms.RadioButton TeslaChargeStationBRadio;
-        private System.Windows.Forms.RadioButton TeslaChargeStationARadio;
+        private CircularProgressBar.CircularProgressBar ToyotaProgressBar;
+        private System.Windows.Forms.PictureBox ToyotaPictureBox;
+        private System.Windows.Forms.TabPage SmartEQTab;
+        private CircularProgressBar.CircularProgressBar MercedesProgressBar;
         private System.Windows.Forms.GroupBox MercedesChargeStationAGroupBox;
         private System.Windows.Forms.RadioButton MercedesChargeStationBRadio;
         private System.Windows.Forms.RadioButton MercedesChargeStationARadio;
-        private CircularProgressBar.CircularProgressBar MercedesProgressBar;
+        private System.Windows.Forms.Label MercedesCarStatusLabel;
+        private System.Windows.Forms.Button MercedesConnectChargeButton;
+        private System.Windows.Forms.Button MercedesDisconnectChargeButton;
+        private System.Windows.Forms.Button MercedesStopButton;
+        private System.Windows.Forms.Button MercedesStartButton;
+        private System.Windows.Forms.PictureBox MercedesPictureBox;
+        private System.Windows.Forms.TabPage TeslaTab;
+        private System.Windows.Forms.GroupBox TeslaChargeStationAGroupBox;
+        private System.Windows.Forms.RadioButton TeslaChargeStationBRadio;
+        private System.Windows.Forms.RadioButton TeslaChargeStationARadio;
+        private System.Windows.Forms.Label TeslaCarStatusLabel;
+        private System.Windows.Forms.Button TeslaConnectChargeButton;
+        private System.Windows.Forms.Button TeslaDisconnectChargeButton;
+        private System.Windows.Forms.Button TeslaStopButton;
+        private System.Windows.Forms.Button TeslaStartButton;
+        private CircularProgressBar.CircularProgressBar TeslaProgressBar;
+        private System.Windows.Forms.PictureBox TeslaPictureBox;
+        private System.Windows.Forms.TabControl Tabs;
     }
 }
 

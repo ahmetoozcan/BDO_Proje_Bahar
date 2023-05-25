@@ -146,7 +146,7 @@ namespace BDO_Proje_Bahar {
                 lock (lockObject) {
                     // Anlık mesajı
                     mqttClient.Publish(HUBTopic, Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(data)), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
-                    Thread.Sleep(10000);
+                    Thread.Sleep(2000);
                     data["id"] = GetNextIteration(data["id"]);
                     data["payload"]["timestamp"] = GetTimeStamp();
                     data["action"] = "Heartbeat";
