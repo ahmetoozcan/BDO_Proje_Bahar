@@ -144,12 +144,11 @@ namespace BDO_Proje_Bahar {
             string HUBTopic = "chargestation/hub";
             while (isOn) {
                 lock (lockObject) {
-                    // Anlık mesajı
                     mqttClient.Publish(HUBTopic, Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(data)), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+                    data["action"] = "Heartbeat";
                     Thread.Sleep(2000);
                     data["id"] = GetNextIteration(data["id"]);
                     data["payload"]["timestamp"] = GetTimeStamp();
-                    data["action"] = "Heartbeat";
                     CalculateEnergy();
                 }
 
