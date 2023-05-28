@@ -30,7 +30,7 @@ namespace BDO_Proje_Bahar {
             data["payload"]["errorCode"] = null;
             data["payload"]["timestamp"] = GetTimeStamp();
             data["payload"]["modelId"] = "ModelY";
-            data["id"] = "aaa000";
+            data["id"] = "aaz980";
 
 
 
@@ -117,26 +117,34 @@ namespace BDO_Proje_Bahar {
             }
         }
 
-        public static string GetNextIteration(string currentIteration) {
-            char[] iterationChars = currentIteration.ToCharArray();
-            int index = iterationChars.Length - 1;
+        public static string GetNextMessageId(string currentMessageId) {
+            string prefix = currentMessageId.Substring(0, 3);
+            int number = int.Parse(currentMessageId.Substring(3));
 
-            while (index >= 0) {
-                if (iterationChars[index] == '9') {
-                    iterationChars[index] = 'a';
-                    break;
+            if (number == 999) {
+                char[] prefixArray = prefix.ToCharArray();
+                int index = 2;
+
+                while (index >= 0) {
+                    if (prefixArray[index] == 'z') {
+                        prefixArray[index] = 'a';
+                        index--;
+                    }
+                    else {
+                        prefixArray[index]++;
+                        break;
+                    }
                 }
-                else if (iterationChars[index] == 'z') {
-                    iterationChars[index] = '0';
-                    index--;
-                }
-                else {
-                    iterationChars[index]++;
-                    break;
-                }
+
+                prefix = new string(prefixArray);
+                number = 0;
+            }
+            else {
+                number++;
             }
 
-            return new string(iterationChars);
+            string nextMessageId = $"{prefix}{number:D3}";
+            return nextMessageId;
         }
 
 
@@ -147,7 +155,7 @@ namespace BDO_Proje_Bahar {
                     mqttClient.Publish(HUBTopic, Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(data)), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
                     data["action"] = "Heartbeat";
                     Thread.Sleep(2000);
-                    data["id"] = GetNextIteration(data["id"]);
+                    data["id"] = GetNextMessageId(data["id"]);
                     data["payload"]["timestamp"] = GetTimeStamp();
                     CalculateEnergy();
                 }
