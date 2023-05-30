@@ -24,7 +24,7 @@ namespace BDO_Proje_Bahar {
         private bool disposed = false;
         private ChargeStationSimulator chargeStation = null;
 
-        public ElectricVehicleSimulator(string brand, string model, double chargeTime, double distance, string imagePath) {
+        public ElectricVehicleSimulator(string brand, string model, double chargeTime, double distance) {
 
             data["brand"] = brand;
             data["model"] = model;
@@ -34,7 +34,7 @@ namespace BDO_Proje_Bahar {
             data["fullchargetime"] = null;
             data["batterytemp"] = null;
             data["distance"] = null;
-            data["imagePath"] = imagePath;
+
 
             this.chargeTime = chargeTime;
             this.distance = distance;
@@ -42,12 +42,13 @@ namespace BDO_Proje_Bahar {
             isCharging = false;
             mqttClient = new MqttClient("broker.hivemq.com");
             mqttClient.Connect(Guid.NewGuid().ToString());
-            statusTopic = $"vehicle/status/data";
+            statusTopic = "test/test/test/test/test/test/test";
 
 
-            mqttClient.Publish(statusTopic, Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(data)), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, true);
+            mqttClient.Publish(statusTopic, Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(data)), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
 
         }
+
 
         public void TurnOn() {
             if (!isTurnedOn) {
@@ -70,7 +71,7 @@ namespace BDO_Proje_Bahar {
                 data["chargePercentage"] = 0;
                 chargeStation?.Disconnect(data);
                 chargeStation = null;
-                mqttClient.Publish(statusTopic, Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(data)), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, true);
+                mqttClient.Publish(statusTopic, Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(data)), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
             }
         }
 

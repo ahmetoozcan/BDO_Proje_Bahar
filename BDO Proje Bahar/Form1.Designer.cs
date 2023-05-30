@@ -63,6 +63,18 @@
             this.TeslaProgressBar = new CircularProgressBar.CircularProgressBar();
             this.TeslaPictureBox = new System.Windows.Forms.PictureBox();
             this.Tabs = new System.Windows.Forms.TabControl();
+            this.AddCarPage = new System.Windows.Forms.TabPage();
+            this.AddCarButton = new System.Windows.Forms.Button();
+            this.UploadButton = new System.Windows.Forms.Button();
+            this.UploadPictureBox = new System.Windows.Forms.PictureBox();
+            this.MaxBatteryDistanceLabel = new System.Windows.Forms.Label();
+            this.BatteryLabel = new System.Windows.Forms.Label();
+            this.ModelLabel = new System.Windows.Forms.Label();
+            this.BrandLabel = new System.Windows.Forms.Label();
+            this.MaxBatteryDistanceTxtBox = new System.Windows.Forms.TextBox();
+            this.ModelTxtBox = new System.Windows.Forms.TextBox();
+            this.BatteryTxtBox = new System.Windows.Forms.TextBox();
+            this.BrandTxtBox = new System.Windows.Forms.TextBox();
             this.MerkezTab.SuspendLayout();
             this.ŞarjGroupBoxB.SuspendLayout();
             this.ŞarjGroupBoxA.SuspendLayout();
@@ -76,6 +88,8 @@
             this.TeslaChargeStationAGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TeslaPictureBox)).BeginInit();
             this.Tabs.SuspendLayout();
+            this.AddCarPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UploadPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // MerkezTab
@@ -570,15 +584,137 @@
             // 
             // Tabs
             // 
+            this.Tabs.Controls.Add(this.MerkezTab);
+            this.Tabs.Controls.Add(this.AddCarPage);
             this.Tabs.Controls.Add(this.TeslaTab);
             this.Tabs.Controls.Add(this.SmartEQTab);
             this.Tabs.Controls.Add(this.ToyotaTab);
-            this.Tabs.Controls.Add(this.MerkezTab);
             this.Tabs.Location = new System.Drawing.Point(-4, 0);
             this.Tabs.Name = "Tabs";
             this.Tabs.SelectedIndex = 0;
             this.Tabs.Size = new System.Drawing.Size(988, 534);
             this.Tabs.TabIndex = 0;
+            // 
+            // AddCarPage
+            // 
+            this.AddCarPage.Controls.Add(this.AddCarButton);
+            this.AddCarPage.Controls.Add(this.UploadButton);
+            this.AddCarPage.Controls.Add(this.UploadPictureBox);
+            this.AddCarPage.Controls.Add(this.MaxBatteryDistanceLabel);
+            this.AddCarPage.Controls.Add(this.BatteryLabel);
+            this.AddCarPage.Controls.Add(this.ModelLabel);
+            this.AddCarPage.Controls.Add(this.BrandLabel);
+            this.AddCarPage.Controls.Add(this.MaxBatteryDistanceTxtBox);
+            this.AddCarPage.Controls.Add(this.ModelTxtBox);
+            this.AddCarPage.Controls.Add(this.BatteryTxtBox);
+            this.AddCarPage.Controls.Add(this.BrandTxtBox);
+            this.AddCarPage.Location = new System.Drawing.Point(4, 22);
+            this.AddCarPage.Name = "AddCarPage";
+            this.AddCarPage.Size = new System.Drawing.Size(980, 508);
+            this.AddCarPage.TabIndex = 4;
+            this.AddCarPage.Text = "Araç Ekleme";
+            this.AddCarPage.UseVisualStyleBackColor = true;
+            // 
+            // AddCarButton
+            // 
+            this.AddCarButton.Location = new System.Drawing.Point(438, 392);
+            this.AddCarButton.Name = "AddCarButton";
+            this.AddCarButton.Size = new System.Drawing.Size(129, 52);
+            this.AddCarButton.TabIndex = 5;
+            this.AddCarButton.Text = "Aracı Ekle";
+            this.AddCarButton.UseVisualStyleBackColor = true;
+            this.AddCarButton.Click += new System.EventHandler(this.AddCarButton_Click);
+            // 
+            // UploadButton
+            // 
+            this.UploadButton.Location = new System.Drawing.Point(730, 294);
+            this.UploadButton.Name = "UploadButton";
+            this.UploadButton.Size = new System.Drawing.Size(129, 52);
+            this.UploadButton.TabIndex = 4;
+            this.UploadButton.Text = "Araç Resmi Yükle";
+            this.UploadButton.UseVisualStyleBackColor = true;
+            this.UploadButton.Click += new System.EventHandler(this.UploadButton_Click);
+            // 
+            // UploadPictureBox
+            // 
+            this.UploadPictureBox.BackColor = System.Drawing.Color.Gray;
+            this.UploadPictureBox.Location = new System.Drawing.Point(665, 38);
+            this.UploadPictureBox.Name = "UploadPictureBox";
+            this.UploadPictureBox.Size = new System.Drawing.Size(250, 214);
+            this.UploadPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.UploadPictureBox.TabIndex = 8;
+            this.UploadPictureBox.TabStop = false;
+            // 
+            // MaxBatteryDistanceLabel
+            // 
+            this.MaxBatteryDistanceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.MaxBatteryDistanceLabel.Location = new System.Drawing.Point(52, 245);
+            this.MaxBatteryDistanceLabel.Name = "MaxBatteryDistanceLabel";
+            this.MaxBatteryDistanceLabel.Size = new System.Drawing.Size(161, 83);
+            this.MaxBatteryDistanceLabel.TabIndex = 7;
+            this.MaxBatteryDistanceLabel.Text = "Full Şarjda Maksimum Mesafe (Km)";
+            // 
+            // BatteryLabel
+            // 
+            this.BatteryLabel.AutoSize = true;
+            this.BatteryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BatteryLabel.Location = new System.Drawing.Point(52, 191);
+            this.BatteryLabel.Name = "BatteryLabel";
+            this.BatteryLabel.Size = new System.Drawing.Size(149, 25);
+            this.BatteryLabel.TabIndex = 6;
+            this.BatteryLabel.Text = "Batarya (kWh)";
+            // 
+            // ModelLabel
+            // 
+            this.ModelLabel.AutoSize = true;
+            this.ModelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ModelLabel.Location = new System.Drawing.Point(52, 135);
+            this.ModelLabel.Name = "ModelLabel";
+            this.ModelLabel.Size = new System.Drawing.Size(71, 25);
+            this.ModelLabel.TabIndex = 5;
+            this.ModelLabel.Text = "Model";
+            // 
+            // BrandLabel
+            // 
+            this.BrandLabel.AutoSize = true;
+            this.BrandLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BrandLabel.Location = new System.Drawing.Point(52, 79);
+            this.BrandLabel.Name = "BrandLabel";
+            this.BrandLabel.Size = new System.Drawing.Size(72, 25);
+            this.BrandLabel.TabIndex = 4;
+            this.BrandLabel.Text = "Marka";
+            // 
+            // MaxBatteryDistanceTxtBox
+            // 
+            this.MaxBatteryDistanceTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.MaxBatteryDistanceTxtBox.Location = new System.Drawing.Point(217, 266);
+            this.MaxBatteryDistanceTxtBox.Name = "MaxBatteryDistanceTxtBox";
+            this.MaxBatteryDistanceTxtBox.Size = new System.Drawing.Size(124, 31);
+            this.MaxBatteryDistanceTxtBox.TabIndex = 3;
+            // 
+            // ModelTxtBox
+            // 
+            this.ModelTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ModelTxtBox.Location = new System.Drawing.Point(217, 132);
+            this.ModelTxtBox.Name = "ModelTxtBox";
+            this.ModelTxtBox.Size = new System.Drawing.Size(124, 31);
+            this.ModelTxtBox.TabIndex = 1;
+            // 
+            // BatteryTxtBox
+            // 
+            this.BatteryTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BatteryTxtBox.Location = new System.Drawing.Point(217, 185);
+            this.BatteryTxtBox.Name = "BatteryTxtBox";
+            this.BatteryTxtBox.Size = new System.Drawing.Size(124, 31);
+            this.BatteryTxtBox.TabIndex = 2;
+            // 
+            // BrandTxtBox
+            // 
+            this.BrandTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BrandTxtBox.Location = new System.Drawing.Point(217, 76);
+            this.BrandTxtBox.Name = "BrandTxtBox";
+            this.BrandTxtBox.Size = new System.Drawing.Size(124, 31);
+            this.BrandTxtBox.TabIndex = 0;
             // 
             // Form1
             // 
@@ -608,6 +744,9 @@
             this.TeslaChargeStationAGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TeslaPictureBox)).EndInit();
             this.Tabs.ResumeLayout(false);
+            this.AddCarPage.ResumeLayout(false);
+            this.AddCarPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UploadPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -641,9 +780,6 @@
         private System.Windows.Forms.Button MercedesStartButton;
         private System.Windows.Forms.PictureBox MercedesPictureBox;
         private System.Windows.Forms.TabPage TeslaTab;
-        private System.Windows.Forms.GroupBox TeslaChargeStationAGroupBox;
-        private System.Windows.Forms.RadioButton TeslaChargeStationBRadio;
-        private System.Windows.Forms.RadioButton TeslaChargeStationARadio;
         private System.Windows.Forms.Label TeslaCarStatusLabel;
         private System.Windows.Forms.Button TeslaConnectChargeButton;
         private System.Windows.Forms.Button TeslaDisconnectChargeButton;
@@ -652,6 +788,21 @@
         private CircularProgressBar.CircularProgressBar TeslaProgressBar;
         private System.Windows.Forms.PictureBox TeslaPictureBox;
         private System.Windows.Forms.TabControl Tabs;
+        private System.Windows.Forms.TabPage AddCarPage;
+        private System.Windows.Forms.Button AddCarButton;
+        private System.Windows.Forms.Button UploadButton;
+        private System.Windows.Forms.PictureBox UploadPictureBox;
+        private System.Windows.Forms.Label MaxBatteryDistanceLabel;
+        private System.Windows.Forms.Label BatteryLabel;
+        private System.Windows.Forms.Label ModelLabel;
+        private System.Windows.Forms.Label BrandLabel;
+        private System.Windows.Forms.TextBox MaxBatteryDistanceTxtBox;
+        private System.Windows.Forms.TextBox ModelTxtBox;
+        private System.Windows.Forms.TextBox BatteryTxtBox;
+        private System.Windows.Forms.TextBox BrandTxtBox;
+        private System.Windows.Forms.GroupBox TeslaChargeStationAGroupBox;
+        private System.Windows.Forms.RadioButton TeslaChargeStationBRadio;
+        private System.Windows.Forms.RadioButton TeslaChargeStationARadio;
     }
 }
 
