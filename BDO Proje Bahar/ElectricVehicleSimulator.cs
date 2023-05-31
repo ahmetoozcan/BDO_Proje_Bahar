@@ -16,6 +16,7 @@ namespace BDO_Proje_Bahar {
         public bool IsTurnedOn { get { return isTurnedOn; } }
         public string Brand { get { return data["brand"]; } }
         public string Model { get { return data["model"]; } }
+        public bool IsCharging { get { return isCharging; } }
         private bool isCharging;
         private Thread simulateThread;
         private Thread chargingThread;
@@ -84,7 +85,7 @@ namespace BDO_Proje_Bahar {
         }
 
         public void Disconnect() {
-            chargeStation.Disconnect(data);
+            chargeStation?.Disconnect(data);
             chargeStation = null;
             data["status"] = "ON";
             StopCharging();

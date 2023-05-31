@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
@@ -206,7 +207,7 @@ namespace BDO_Proje_Bahar {
                 tesla.Connect(chargeStation2);
             }
             else {
-                MessageBox.Show("\tLütfen bir şarj aleti seçin ya da simülasyonu başlatın!\t");
+                MessageBox.Show("Lütfen bir şarj aleti seçin ya da simülasyonu başlatın!\t", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -230,7 +231,7 @@ namespace BDO_Proje_Bahar {
                 mercedes.Connect(chargeStation2);
             }
             else {
-                MessageBox.Show("\tLütfen bir şarj aleti seçin ya da simülasyonu başlatın!\t");
+                MessageBox.Show("Lütfen bir şarj aleti seçin ya da simülasyonu başlatın!\t", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -254,7 +255,7 @@ namespace BDO_Proje_Bahar {
                 toyota.Connect(chargeStation2);
             }
             else {
-                MessageBox.Show("\tLütfen bir şarj aleti seçin ya da simülasyonu başlatın!\t");
+                MessageBox.Show("Lütfen bir şarj aleti seçin ya da simülasyonu başlatın!\t", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -276,7 +277,6 @@ namespace BDO_Proje_Bahar {
 
                     UploadPictureBox.Load(filePath);
                 }
-
             }
         }
 
@@ -285,13 +285,18 @@ namespace BDO_Proje_Bahar {
             if (string.IsNullOrEmpty(BrandTxtBox.Text) || string.IsNullOrEmpty(ModelTxtBox.Text)
                 || string.IsNullOrEmpty(BatteryTxtBox.Text) || string.IsNullOrEmpty(MaxBatteryDistanceTxtBox.Text) || string.IsNullOrEmpty(filePath)) {
 
-                MessageBox.Show("\tBütün boşlukları doldurun!\t", "Hata!");
+                MessageBox.Show("Bütün boşlukları doldurun!\t", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (Regex.IsMatch(BatteryTxtBox.Text, @"^[a-zA-z]") || Regex.IsMatch(MaxBatteryDistanceTxtBox.Text, @"^[a-zA-z]")) {
+                MessageBox.Show("Batarya ve Mesafe girdileri rakamlardan oluşmalıdır!\t", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             foreach (KeyValuePair<string, Tabs> keyValue in tabs) {
                 if (keyValue.Value.ElectricVehicleSimulator.Model == ModelTxtBox.Text)
-                    MessageBox.Show("\tBelirtilen model araç sistemde bulumakta!\t", "Hata!");
+                    MessageBox.Show("Belirtilen model araç sistemde bulumakta!\t", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 

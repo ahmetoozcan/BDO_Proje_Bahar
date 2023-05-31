@@ -179,7 +179,7 @@ namespace BDO_Proje_Bahar {
                 electricVehicle.Connect(chargeStations[1]);
             }
             else {
-                MessageBox.Show("\tLütfen bir şarj aleti seçin ya da simülasyonu başlatın!\t");
+                MessageBox.Show("Lütfen bir şarj aleti seçin ya da simülasyonu başlatın!\t", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         private void ButtonDisconnect_Click(object sender, EventArgs e) {
